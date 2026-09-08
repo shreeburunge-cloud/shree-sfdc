@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Showing Selected Product Details In The Parent">
+        <template if:true={selectedProduct}>
+            <div class="slds-p-top_medium">
+                <p><strong>Name:</strong> {selectedProduct.name}</p>
+                <p><strong>Price:</strong> ${selectedProduct.price}</p>
+                <p><strong>Description:</strong> {selectedProduct.description}</p>
+            </div>
+        </template>
+
+        <template if:false={selectedProduct}>
+            <p>Select a product to view details.</p>
+        </template>
+        <c-child-to-parent-communication-child-cmp
+            onproductselected={handleProductSelection}></c-child-to-parent-communication-child-cmp>
+
+
+    </lightning-card>
+</template>

@@ -1,0 +1,27 @@
+<!-- 
+    @@@ Devepoled By: shrikrishna Burunge
+-->
+
+<template>
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_3-of-6" >
+    <lightning-card title="REST Callout From LWC " icon-name="utility:contact">
+        <p class="slds-var-p-around_small">
+                        <lightning-button class="slds-align_absolute-left slds-var-m-bottom_small" label="Get Animal Details" onclick={getRecords}></lightning-button></span>
+        </p>
+    </lightning-card>
+    </div>
+    <div class="slds-col slds-size_3-of-6" >
+        <template if:true={displayADetails.data}>
+            <lightning-card title="Display Animal Details"> 
+            <div style="height:400px">
+                <lightning-datatable key-field="Id" data={displayADetails.data} columns={columns}></lightning-datatable>
+            </div>
+        </lightning-card>
+        </template>
+        <template if:true={errors}>
+            <p>{errors}</p>
+        </template>
+     </div>
+    </div>
+</template>

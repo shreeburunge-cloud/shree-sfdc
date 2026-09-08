@@ -1,0 +1,47 @@
+<template>
+    <lightning-card title="Registration Form">
+        <div class="slds-p-around_medium">
+            <!-- Full Name -->
+            <lightning-input label="Full Name" value={fullName} onchange={handleChange} data-id="fullName"
+                required></lightning-input>
+
+            <!-- Email -->
+            <lightning-input type="email" label="Email" value={email} onchange={handleChange} data-id="email"
+                required></lightning-input>
+
+            <!-- PAN -->
+            <lightning-input label="PAN Number" value={pan} onchange={handleChange} data-id="pan"
+                required></lightning-input>
+
+            <!-- Phone -->
+            <lightning-input type="tel" label="Phone Number" value={phone} onchange={handleChange} data-id="phone"
+                required></lightning-input>
+
+            <!-- Date -->
+            <lightning-input type="date" label="Date of Birth" value={dob} onchange={handleChange} data-id="dob"
+                required></lightning-input>
+
+            <!-- Gender (Radio Buttons) -->
+            <lightning-radio-group label="Gender" options={genderOptions} value={gender} type="radio"
+                onchange={handleChange} data-id="gender" required>
+            </lightning-radio-group>
+
+            <!-- State (Picklist) -->
+            <lightning-combobox label="State" value={selectedState} placeholder="Select State" options={stateOptions}
+                onchange={handleChange} data-id="state" required>
+            </lightning-combobox>
+
+            <!-- Terms Checkbox -->
+            <lightning-input type="checkbox" label="I agree to the terms and conditions" checked={agreed}
+                onchange={handleChange} data-id="terms"></lightning-input>
+
+            <!-- Submit Button -->
+            <div class="slds-m-top_medium">
+                <lightning-button variant="brand" label="Submit" onclick={handleSubmit}></lightning-button>
+            </div>
+        </div>
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading.. Please wait." variant="brand"></lightning-spinner>
+        </template>
+    </lightning-card>
+</template>

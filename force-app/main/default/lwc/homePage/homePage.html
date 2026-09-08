@@ -1,0 +1,132 @@
+<template>
+    <lightning-card title="LWC Navigation">
+
+        <div class="slds-border_right slds-grid">
+
+            <!-- Left Side Links -->
+            <div class="slds-border_right slds-col slds-size_1-of-4 slds-p-around_medium">
+                <p>
+                    <a href="javascript:void(0)" data-component="registration" onclick={handleClick}>
+                        Registration Form with Validation
+                    </a>
+                </p>
+                <p>
+                    <a href="javascript:void(0)" data-component="regexvalidation" onclick={handleClick}>
+                        Regex Patterns Validation
+                    </a>
+                </p>
+                <p>
+                    <a href="javascript:void(0)" data-component="wiremethod" onclick={handleClick}>
+                        Apex Wire Method
+                    </a>
+                </p>
+                <p>
+                    <a href="javascript:void(0)" data-component="wiremethodwithparams" onclick={handleClick}>
+                        Apex Wire Method With Params
+                    </a>
+                </p>
+
+                <p>
+                    <a href="javascript:void(0)" data-component="getanimaldetails" onclick={handleClick}>
+                        REST Callout Demo
+                    </a>
+                </p>
+                <p>
+                    <a href="javascript:void(0)" data-component="getproductdetails" onclick={handleClick}>
+                        Child To Parent Communication
+                    </a>
+                </p>
+                <p>
+                    <a href="javascript:void(0)" data-component="getvaluefromparent" onclick={handleClick}>
+                        Parent To Child Communication
+                    </a>
+                </p>
+                <p>
+                    <a href="javascript:void(0)" data-component="lms" onclick={handleClick}>
+                        LMS Demo
+                    </a>
+                </p>
+                <p>
+                    <a href="javascript:void(0)" data-component="datatable" onclick={handleClick}>
+                        Data Table Demo
+                    </a>
+                </p>
+                <p>
+                    <a href="javascript:void(0)" data-component="pagenation" onclick={handleClick}>
+                        Pagenation Demo
+                    </a>
+                </p>
+                <p>
+                    <a href="javascript:void(0)" data-component="uiRecordApi" onclick={handleClick}>
+                        uiRecordApi
+                    </a>
+                </p>
+                <p>
+                    <a href="javascript:void(0)" data-component="discountclacy" onclick={handleClick}>
+                        Discount Calculator
+                    </a>
+                </p>
+            </div>
+
+            <!-- Right Side Component -->
+            <div class="slds-col slds-size_3-of-4 slds-p-around_medium">
+
+                <template if:true={showRegistration}>
+                    <c-registration-form-validation></c-registration-form-validation>
+
+                </template>
+
+                <template if:true={showRegexValidation}>
+                    <c-regex-validation></c-regex-validation>
+                </template>
+
+                <template if:true={showWireMethod}>
+                    <c-wire-method></c-wire-method>
+
+                </template>
+
+                <template if:true={showWireMetodWithParams}>
+                    /<!-- <c-contact-component></c-contact-component> -->
+                    <c-apex-wire-method-with-params></c-apex-wire-method-with-params>
+                </template>
+
+                <template if:true={showApexRestcallout}>
+                    <c-apex-restcallout></c-apex-restcallout>
+                </template>
+
+                <template if:true={showChildToParentCompnent}>
+                    <c-child-to-parent-communication-parent-cmp></c-child-to-parent-communication-parent-cmp>
+                </template>
+
+                <template if:true={showParentToChildCompnent}>
+                    <c-parent-to-child-communication-parent-comp></c-parent-to-child-communication-parent-comp>
+                </template>
+
+                <template if:true={showLmsRecords}>
+                    <c-lms-publish-component></c-lms-publish-component>
+                    <c-lms-subscribe-component></c-lms-subscribe-component>
+                </template>
+
+                <template if:true={showDatatableRecords}>
+                    <c-account-datatable></c-account-datatable>
+                </template>
+
+                <template if:true={showPagenationRecords}>
+                    <c-pagenation-demo></c-pagenation-demo>
+                </template>
+
+                <template if:true={showUIRecordApi}>
+                    <c-ui-record-api></c-ui-record-api>
+                </template>
+
+                <template if:true={showDiscountCalcy}>
+                    <c-discount-calcy-launcher></c-discount-calcy-launcher>
+                </template>
+
+
+            </div>
+
+        </div>
+
+    </lightning-card>
+</template>

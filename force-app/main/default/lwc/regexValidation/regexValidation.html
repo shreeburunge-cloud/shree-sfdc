@@ -1,0 +1,47 @@
+<template>
+    <lightning-card title="Regex Validation Example">
+        <div class="slds-p-around_medium">
+
+            <!-- Name -->
+            <lightning-input label="Name (Letters Only)" pattern="^[A-Za-z]+$"
+                message-when-pattern-mismatch="Only letters are allowed." required>
+            </lightning-input>
+
+            <!-- Age -->
+            <lightning-input label="Age (Numbers Only)" pattern="^[0-9]+$"
+                message-when-pattern-mismatch="Only numbers are allowed." required>
+            </lightning-input>
+
+            <!-- Username -->
+            <lightning-input label="Username (Letters & Numbers)" pattern="^[A-Za-z0-9]+$"
+                message-when-pattern-mismatch="Only letters and numbers are allowed." required>
+            </lightning-input>
+
+            <!-- Email -->
+            <lightning-input type="email" label="Email" pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"
+                message-when-pattern-mismatch="Enter a valid email address." required>
+            </lightning-input>
+
+            <!-- Mobile -->
+            <lightning-input label="Mobile Number" pattern="^[0-9]{10}$"
+                message-when-pattern-mismatch="Enter a valid 10-digit mobile number." required>
+            </lightning-input>
+
+            <!-- Password -->
+            <lightning-input type="password" label="Password"
+                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+                message-when-pattern-mismatch="Password must contain at least 8 characters, one uppercase, one lowercase, one number, and one special character."
+                required>
+            </lightning-input>
+
+            <!-- PIN Code -->
+            <lightning-input label="PIN Code" pattern="^[0-9]{6}$"
+                message-when-pattern-mismatch="Enter a valid 6-digit PIN code." required>
+            </lightning-input>
+
+            <lightning-button label="Submit" variant="brand" onclick={handleSubmit} class="slds-m-top_medium">
+            </lightning-button>
+
+        </div>
+    </lightning-card>
+</template>

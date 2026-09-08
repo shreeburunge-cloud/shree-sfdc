@@ -1,0 +1,42 @@
+<template>
+    <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+
+        <div class="slds-modal__container">
+
+            <header class="slds-modal__header">
+                <h2 class="slds-text-heading_medium">
+                    Discount Calculator
+                </h2>
+            </header>
+
+            <div class="slds-modal__content slds-p-around_medium">
+
+                <lightning-input type="number" label="Original Price" value={price} onchange={handlePrice}>
+                </lightning-input>
+
+                <lightning-input type="number" label="Discount (%)" value={discount} onchange={handleDiscount}>
+                </lightning-input>
+
+                <br />
+
+                <lightning-button label="Calculate" variant="brand" onclick={calculate}>
+                </lightning-button>
+
+                <template if:true={finalPrice}>
+                    <div class="slds-m-top_medium">
+                        <strong>Final Price :</strong> ₹ {finalPrice}
+                    </div>
+                </template>
+
+            </div>
+
+            <footer class="slds-modal__footer">
+                <lightning-button label="Close" onclick={close}>
+                </lightning-button>
+            </footer>
+
+        </div>
+    </section>
+
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template>

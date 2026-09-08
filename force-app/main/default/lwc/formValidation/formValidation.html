@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Input Validation Using Regex">
+        <p class="slds-var-p-around_small">
+        <lightning-layout multiple-rows>
+        <lightning-layout-item padding="around_small" size="12" medium-device-size="6" large-device-size="6">
+            <lightning-input  name="pan" type="text" label="P Number" class="validate" pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}$" message-when-pattern-mismatch="Please enter a valid pan number" onchange={onPanChange} required></lightning-input>
+            <lightning-input name="password" class="validate" type="password" label="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" message-when-pattern-mismatch="Please enter a valid password" onchange={onPasswordChange} required></lightning-input>
+            <lightning-input name="email" class="validate" type="email" label="Email" pattern="[A-Za-z0-9._-]+@[a-z0-9-]+.[a-z]{2}$" message-when-pattern-mismatch="Please enter a valid email" onchange={onEmailChange} required></lightning-input>
+            <lightning-input name="phone" class="validate" type="phone" label="Phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}$" message-when-pattern-mismatch="Please enter valid phone number" onchange={onPhoneChange} required></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" class="slds-var-p-top_small">
+            <lightning-button class="slds-align_absolute-center" label="Submit" onclick={saveContact}></lightning-button>
+            </lightning-layout-item>
+            </lightning-layout>
+            </p>
+            </lightning-card>   
+</template>

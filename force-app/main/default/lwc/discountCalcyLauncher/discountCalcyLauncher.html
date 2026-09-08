@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Discount Calculator">
+        <div class="slds-p-around_medium">
+            <lightning-button label="Discount Calcy" variant="brand" onclick={openCalculator}>
+            </lightning-button>
+        </div>
+
+        <template if:true={showCalculator}>
+            <c-discount-calculator onclose={closeCalculator}>
+            </c-discount-calculator>
+        </template>
+    </lightning-card>
+</template>

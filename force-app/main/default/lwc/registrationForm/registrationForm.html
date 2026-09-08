@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="New Registration">
+        <lightning-layout multiple-rows="">
+            <lightning-layout-item padding="'around_small" size="12" medium-device-size="6">
+                <lightning-input type="text"  label="User Name" value={getRegstrationRecord.Name} onchange={userNameInpChange}></lightning-input>
+                <lightning-input type="password" label="Password" value={getRegstrationRecord.Password__c} onchange={passwordInpChange}></lightning-input>
+                <!--<lightning-input type="checkbox" label="Eligible" value={getRegstrationRecord.Eligible__c}  onchange={eligibleInpChange}></lightning-input>-->
+                <lightning-input type="text"  label="First Name" value={getRegstrationRecord.First_Name__c}  onchange={firstNameInpChange}></lightning-input> 
+                <lightning-input type="text" label="Last Name" value={getRegstrationRecord.Last_Name__c}  onchange={lastNameInpChange}></lightning-input> 
+                <lightning-input type="email" label="Email" valuec={getRegstrationRecord.Email__c}  onchange={emailInpChange}></lightning-input>
+                <lightning-input type="phone" label="Phone" value={getRegstrationRecord.Phone__c} onchange={phoneInpChange}></lightning-input>
+                <lightning-input type="number" label="Pin" value={getRegstrationRecord.Pin__c}  onchange={pinInpChange}></lightning-input>
+                <lightning-input type="text" label ="PAN" value={getRegstrationRecord.PAN__c}  onchange={panInpChange}></lightning-input>
+            </lightning-layout-item>
+        </lightning-layout>
+        <p>
+            <lightning-button class="slds-align_absolute-center slds-var-m-bottom_small" label="Submit" onclick={submitDetails}></lightning-button>
+        </p>
+
+    </lightning-card>
+</template>
