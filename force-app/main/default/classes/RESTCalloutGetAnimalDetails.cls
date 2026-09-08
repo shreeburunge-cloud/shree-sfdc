@@ -1,3 +1,8 @@
+/**
+ * @Author Shrikrishna Burunge
+ * Discription : This RESTCallout clas is created for get the animal details from external system and display on the UI 
+ * in the salesforce.
+ */
 public class RESTCalloutGetAnimalDetails {
     @AuraEnabled
     public static string getAnimalRecords(){
